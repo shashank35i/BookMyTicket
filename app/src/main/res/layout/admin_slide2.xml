@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <!-- Header Section -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:layout_marginEnd="12dp"
+            app:tint="#000000" />
+
+        <!-- Header Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ticket &amp; Payment Setup"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:fontFamily="@font/poppins_bold" />
+    </LinearLayout>
+
+    <!-- QR Code Section -->
+    <TextView
+        android:id="@+id/txtScanForQR"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Scan For QR Code"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="end"
+        android:paddingTop="36dp"
+        android:paddingEnd="130dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/qrImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.65"
+        app:layout_constraintTop_toBottomOf="@id/txtScanForQR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Shimmer Placeholder for Place -->
+    <View
+        android:id="@+id/shimmerPlace"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shimmer_placeholder"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/qrImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Place TextView -->
+    <TextView
+        android:id="@+id/txtPlace"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingBottom="4dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/qrImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Shimmer Placeholder for QR Generated Date -->
+    <View
+        android:id="@+id/shimmerQRGeneratedDate"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:background="@drawable/shimmer_placeholder"
+        android:layout_marginTop="4dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/shimmerPlace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- QR Generated Date TextView -->
+    <TextView
+        android:id="@+id/txtQRGeneratedDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/txtPlace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtQRInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="This QR code is unique to this location. Please share it with visitors for ticket purchase."
+        android:textSize="14sp"
+        android:layout_marginTop="90dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtQRGeneratedDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Download QR Code Section -->
+    <LinearLayout
+        android:id="@+id/downloadSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txtQRInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtDownloadQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Download this QR code"
+            android:textSize="14sp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/poppins_medium" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/stat_sys_download"
+            android:contentDescription="Download"
+            app:tint="@color/black" />
+    </LinearLayout>
+
+    <!-- Generate QR Code Button -->
+    <Button
+        android:id="@+id/btnGenerateQR"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Generate QR Code"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="#03A3E7"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        app:cornerRadius="12dp"
+        app:strokeColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/downloadSection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Set the window background to match your splash screen -->
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <!-- Disable default system splash screen behavior -->
+        <item name="android:windowDisablePreview">true</item>
+        <!-- Ensure no action bar -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- Optimize for fast rendering -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/black</item>
+        <!-- For API 31+ SplashScreen API -->
+        <item name="android:windowSplashScreenBackground">@color/black</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/initial</item>
+        <item name="android:windowSplashScreenAnimationDuration">0</item>
+    </style>
+
+    <style name="BlackTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

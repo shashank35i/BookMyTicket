@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- License Plate Shape -->
+    <path
+        android:pathData="M4,6 h16 v10 h-16 z"
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#2563EB"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round" />
+
+    <!-- Number Plate Text Placeholder (simplified) -->
+    <path
+        android:pathData="M6,9 h12 v4 h-12 z"
+        android:fillColor="#2563EB" />
+
+    <!-- Scanning Effect (Horizontal Line) -->
+    <path
+        android:pathData="M4,11 h16"
+        android:strokeColor="#3B82F6"
+        android:strokeWidth="1"
+        android:strokeLineCap="round" />
+
+    <!-- Scanning Effect (Glow Dots at Ends) -->
+    <path
+        android:pathData="M4,11 a1,1 0 1 1 2,0 a1,1 0 1 1 -2,0"
+        android:fillColor="#F63B99" />
+    <path
+        android:pathData="M20,11 a1,1 0 1 1 -2,0 a1,1 0 1 1 2,0"
+        android:fillColor="#3B82F6" />
+
+    <!-- Car Icon (Simplified) Above Plate -->
+    <path
+        android:pathData="M7,4 h10 v2 h-2 l-1,-2 h-4 l-1,2 h-2 z"
+        android:fillColor="#2563EB" />
+</vector>

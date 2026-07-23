@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Fixed Header -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            android:layout_marginEnd="12dp"
+            app:tint="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Ticket Details"
+            android:textSize="18sp"
+            android:textColor="#222222"
+            android:fontFamily="@font/poppins_bold"/>
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place Name"
+                android:paddingBottom="6dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <EditText
+                android:id="@+id/editPlace"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autofillHints="PLACE"
+                android:textSize="12sp"
+                android:hint="e.g., Taj Mahal, Ooty"
+                android:textColor="#353942"
+                android:textColorHint="#9D9EA2"
+                android:background="@drawable/edit_text_bg"
+                android:paddingStart="12dp"
+                android:paddingEnd="36dp"
+                android:layout_marginBottom="12dp"
+                android:inputType="text"
+                android:fontFamily="@font/poppins_regular" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adult Ticket Price (13-59 yrs)"
+                android:paddingBottom="6dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editTextAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="AMOUNT"
+                    android:hint="0"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:id="@+id/textViewRupeeAdults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="#6B7280"
+                    android:textSize="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Student Ticket Price (with valid ID)"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editTextStudents"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="AMOUNT"
+                    android:hint="0"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:id="@+id/textViewRupeeStudents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="#6B7280"
+                    android:textSize="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Child Ticket Price (0-12 yrs)"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editTextChildren"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="AMOUNT"
+                    android:hint="0"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:id="@+id/textViewRupeeChildren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="#6B7280"
+                    android:textSize="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senior Citizen Ticket Price (60+ yrs)"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editTextSeniorCitizens"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="AMOUNT"
+                    android:hint="0"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:id="@+id/textViewRupeeSeniorCitizens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="#6B7280"
+                    android:textSize="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Camera Charges"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editTextCameraFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="AMOUNT"
+                    android:hint="0"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <TextView
+                    android:id="@+id/textViewRupeeCameraFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="#6B7280"
+                    android:textSize="20sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/poppins_regular" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Entry Time"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:id="@+id/editValidFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:autofillHints="TIMING"
+                    android:hint="9:00 AM"
+                    android:textColor="#353942"
+                    android:textColorHint="#353942"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:gravity="center"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:drawablePadding="8dp"
+                    android:tint="#1E90FF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" to "
+                    android:textColor="#353942"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:paddingHorizontal="8dp"
+                    android:fontFamily="@font/poppins_regular"/>
+
+                <TextView
+                    android:id="@+id/editValidTo"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:autofillHints="TIMING"
+                    android:hint="5:00 PM"
+                    android:textColor="#353942"
+                    android:textColorHint="#353942"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:gravity="center"
+                    android:drawableStart="@drawable/ic_clock"
+                    android:drawablePadding="8dp"
+                    android:tint="#1E90FF"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_regular"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Helpline for Visitors"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:textColor="#353942"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/editHelpline"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:autofillHints="phone"
+                    android:hint="+91"
+                    android:textColor="#353942"
+                    android:textColorHint="#9D9EA2"
+                    android:background="@drawable/edit_text_bg"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="36dp"
+                    android:inputType="text"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_regular" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="6dp"
+                    app:tint="#1E90FF" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Instructions for Visitors"
+                android:paddingTop="12dp"
+                android:paddingBottom="6dp"
+                android:textColor="#353942"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"/>
+
+            <EditText
+                android:id="@+id/instructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="e.g., Outside food is not allowed"
+                android:background="@drawable/edit_text_bg"
+                android:textColor="#353942"
+                android:textColorHint="#9D9EA2"
+                android:textSize="12sp"
+                android:padding="10dp"
+                android:layout_marginTop="6dp"
+                android:inputType="textMultiLine"
+                android:gravity="top"
+                android:fontFamily="@font/poppins_regular" />
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Next"
+                android:backgroundTint="#1E90FF"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"
+                app:cornerRadius="8dp"
+                android:layout_marginTop="12dp"
+                android:enabled="false"
+                android:fontFamily="@font/poppins_medium"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

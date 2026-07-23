@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motion_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    app:layoutDescription="@xml/scan_vehicle_scene">
+
+    <!-- White Background Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="16dp">
+
+            <!-- Header Text -->
+            <TextView
+                android:id="@+id/instruction_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:text="Scan Vehicle"
+                android:textColor="#1A1A1A"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Camera Preview -->
+            <androidx.camera.view.PreviewView
+                android:id="@+id/preview_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="0dp"
+                android:layout_marginTop="16dp"
+                android:background="#212121"
+                app:layout_constraintTop_toBottomOf="@id/instruction_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.55" />
+
+            <!-- Scanner Frame (Overlaid on Preview) -->
+            <FrameLayout
+                android:id="@+id/scanner_frame"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:background="@drawable/scanner_frame_background"
+                android:clipChildren="false"
+                android:elevation="8dp"
+                app:layout_constraintTop_toTopOf="@id/preview_view"
+                app:layout_constraintBottom_toBottomOf="@id/preview_view"
+                app:layout_constraintStart_toStartOf="@id/preview_view"
+                app:layout_constraintEnd_toEndOf="@id/preview_view">
+                <ImageView
+                    android:id="@+id/scanner_border"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/scanner_border"
+                    android:scaleType="fitXY"
+                    android:contentDescription="Scanner Border" />
+                <ImageView
+                    android:id="@+id/scan_laser"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+
+                    android:visibility="gone"
+                    android:contentDescription="Scanning Laser" />
+                <ImageView
+                    android:id="@+id/scan_success"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_check_circle"
+                    android:visibility="gone"
+                    android:contentDescription="Scan Success"
+                    app:tint="#00C853" />
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_indicator"
+                    android:layout_width="48dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    app:indicatorColor="#00C853"
+                    app:trackColor="#E8ECEF"
+                    app:trackThickness="4dp" />
+            </FrameLayout>
+
+            <!-- Recognized Number Text -->
+            <TextView
+                android:id="@+id/recognized_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="12dp"
+                android:padding="12dp"
+                android:text="Align number plate within the frame"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/preview_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_back"
+                android:background="@drawable/circle_light_gray_background"
+                android:contentDescription="Back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:tint="#1A1A1A" />
+
+            <!-- Flash Toggle Button -->
+            <ImageView
+                android:id="@+id/flash_button"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="5dp"
+                android:padding="6dp"
+                android:background="@drawable/circle_light_gray_background"
+                android:src="@drawable/ic_torch_off"
+                android:contentDescription="Toggle Flash"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="#1A1A1A" />
+
+            <!-- Button Container -->
+            <LinearLayout
+                android:id="@+id/button_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/recognized_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_scan"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="Scan"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:backgroundTint="#0066FF"
+                    app:cornerRadius="8dp"
+                    app:rippleColor="#4D82F7" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_edit"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="6dp"
+                    android:text="Edit"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:backgroundTint="#00C853"
+                    android:visibility="gone"
+                    app:cornerRadius="8dp"
+                    app:rippleColor="#66FFA6" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_manual_entry"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="Manual Entry"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:backgroundTint="#00C853"
+                    app:cornerRadius="8dp"
+                    app:rippleColor="#66FFA6" />
+            </LinearLayout>
+
+            <!-- Confirm Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:text="Confirm"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:enabled="false"
+                android:backgroundTint="#B0BEC5"
+                app:cornerRadius="8dp"
+                app:rippleColor="#ECEFF1"
+                app:layout_constraintTop_toBottomOf="@id/button_container"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="premium_dialog_bg">#1E1E2F</color>
+    <color name="card_bg_dark">#2A2A3B</color>
+<color name="celebration_accent">#FFD700</color>
+    <color name="primary_blue">#013764</color>
+    <color name="accent_orange">#FF6D00</color>
+    <color name="primary_text">#212121</color>
+    <color name="header_start">#172E37</color>
+    <color name="secondary_text">#757575</color>
+    <color name="disabled_grey_color">#B0BEC5</color>
+    <color name="primary_teal">#00695C</color>
+    <color name="secondary_teal">#26A69A</color>
+    <color name="primary_selector">@color/primary</color>
+    <color name="button_pressed">#1565C0</color>
+    <color name="splash_background">#FFFFFF</color> <!-- Adjust to match branding -->
+
+
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="accent_light">#4CAF50</color>
+    <color name="accent_dark">#388E3C</color>
+    <color name="premium_white">#F5F5F5</color>
+    <color name="green">#FF4CAF50</color>  <!-- Material Green 500 -->
+    <color name="red">#FFF44336</color>
+    <color name="splash_background_color">#161B22</color>
+    <color name="button_enabled">#1E90FF</color>
+    <color name="button_disabled">#B0C4DE</color>
+    <color name="status_valid">#FFFFFF</color>    <!-- Purple -->
+    <color name="card_background">#FFFFFF</color>
+
+    <color name="premium_dark_purple">#2A1B3D</color>
+    <color name="premium_primary">#000000</color>
+    <color name="premium_primary_light">#9A7DFF</color>
+    <color name="premium_secondary">#FF6B6B</color>
+
+    <color name="premium_light_gray">#F5F5F5</color>
+    <color name="premium_dark_text">#333333</color>
+    <color name="premium_secondary_text">#666666</color>
+    <color name="premium_red">#FF4757</color>
+    <color name="colorPrimary">#111114</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="statusBarColor">#0056b3</color>
+    <color name="navigationBarColor">#004494</color>
+    <color name="colorCompleted">#4CAF50</color> <!-- Green -->
+    <color name="colorPaid">#2196F3</color>     <!-- Blue -->
+    <color name="colorPending">#FF9800</color>  <!-- Orange -->
+
+    <color name="primary_color">#3A0CA3</color>
+    <color name="primary_light">#7209B7</color>
+    <color name="secondary_color">#4361EE</color>
+
+    <!-- Sort Button Colors -->
+    <color name="sort_button_text">#6200EE</color>
+    <color name="sort_button_icon">#6200EE</color>
+    <color name="sort_button_stroke">#E0E0E0</color>
+
+
+    <color name="status_active">#FFFFFF</color>
+    <color name="status_expired">#FFFFFF</color>
+    <!-- Filter chip colors -->
+    <color name="primary_light_20">#337C4DFF</color> <!-- 20% opacity version -->
+    <color name="background">#F5F5F5</color>
+    <color name="primary_purple">#3E2A47</color>
+    <color name="background_light">#F5F6FA</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="text_hint">#B0B0B0</color>
+    <color name="text_input_stroke">#E0F7FA</color>
+    <color name="error_color">#D32F2F</color>
+    <color name="success_green">#4CAF50</color>
+    <color name="parking_card_background">#E8F0FE</color>
+    <color name="parking_accent_color">#0288D1</color>
+    <color name="primary">#1976D2</color>
+    <color name="accent">#4CAF50</color>
+    <color name="divider">#EEEEEE</color>
+    <color name="gradient_background">#1976D2</color>
+    <color name="primary_color_ripple">#4B6FCF</color>
+    <color name="colorDefault">#9E9E9E</color>  <!-- Gray -->
+    <color name="gray">#B0B0B0</color>   <!-- Hint & Icon Color -->
+    <color name="dark_gray">#262626</color>  <!-- Input Fields & Button Background -->
+    <color name="blue">#008CFF</color>   <!-- Register Button Color -->
+    <color name="sort_button_background">#FFFFFF</color>
+    <color name="sort_button_ripple">#E5E7EB</color>
+    <color name="chip_background_unselected">#E5E7EB</color>
+    <color name="chip_background_selected">#DBEAFE</color>
+    <color name="header_background">#1A252F</color>
+    <color name="status_background">#34C759</color>
+    <color name="text_primary">#1A252F</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="icon_tint">#6B7280</color>
+    <color name="chip_text_unselected">#6B7280</color>
+    <color name="chip_text_selected">#100101</color>
+    <color name="button_background">#1A252F</color>
+    <color name="button_stroke">#1A252F</color>
+    <color name="button_ripple">#4B5EAA</color>
+    <color name="white_80">#CCFFFFFF</color> <!-- 80% opacity white for secondary text -->
+    <color name="white_60">#99FFFFFF</color> <!-- 60% opacity white for labels -->
+    <color name="white_30">#4DFFFFFF</color>
+</resources>

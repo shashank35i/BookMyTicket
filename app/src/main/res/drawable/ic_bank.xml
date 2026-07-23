@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Bank building with refined pediment, columns, and base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M3,19H21V21H3V19ZM12,3L2,8V10H22V8L12,3ZM4,9H20V10H4V9Z"
+        android:fillType="nonZero"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,11H7V17H5V11ZM9,11H11V17H9V11ZM13,11H15V17H13V11ZM17,11H19V17H17V11Z"
+        android:fillType="nonZero"/>
+</vector>

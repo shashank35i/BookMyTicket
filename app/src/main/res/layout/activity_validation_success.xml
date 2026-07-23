@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="8dp">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="4dp"
+        app:tint="#333333" />
+
+    <FrameLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_check_circle"
+                        app:tint="#4CAF50"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TICKET VALIDATED"
+                        android:textColor="#333333"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="400dp"
+                        android:text="This ticket is now marked as used and cannot be reused."
+                        android:textColor="#666666"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:lineSpacingExtra="6dp"
+                        android:ellipsize="none"
+                        android:singleLine="false"/>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ticketDetailsContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="#FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TICKET DETAILS"
+                            android:textColor="#333333"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/poppins_medium"
+                            android:drawablePadding="8dp"
+                            android:drawableStart="@drawable/ic_tickets"
+                            android:drawableTint="#4CAF50"
+                            android:layout_marginBottom="12dp"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/labelPlace"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Place:"
+                                android:textColor="#666666"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <TextView
+                                android:id="@+id/txtPlace"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:ellipsize="none"
+                                android:maxLines="3"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toEndOf="@id/labelPlace"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/labelPlace"/>
+
+                            <TextView
+                                android:id="@+id/labelDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date:"
+                                android:textColor="#666666"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/txtPlace"/>
+
+                            <TextView
+                                android:id="@+id/txtDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:ellipsize="none"
+                                android:singleLine="false"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toEndOf="@id/labelDate"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/labelDate"/>
+
+                            <TextView
+                                android:id="@+id/labelTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time:"
+                                android:textColor="#666666"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/txtDate"/>
+
+                            <TextView
+                                android:id="@+id/txtTime"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:ellipsize="none"
+                                android:singleLine="false"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toEndOf="@id/labelTime"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/labelTime"/>
+
+                            <TextView
+                                android:id="@+id/labelTicketId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ticket ID:"
+                                android:textColor="#666666"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/labelTime"/>
+
+                            <TextView
+                                android:id="@+id/txtTicketId"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:textColor="#4CAF50"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"
+                                android:ellipsize="none"
+                                android:singleLine="false"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                app:layout_constraintStart_toEndOf="@id/labelTicketId"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/labelTicketId"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:id="@+id/visitorCountsContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="12dp"
+                            android:visibility="gone"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Visitors:"
+                                android:textColor="#666666"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_regular"
+                                android:layout_marginEnd="8dp"/>
+
+                            <TextView
+                                android:id="@+id/txtTotalVisitors"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/poppins_medium"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</RelativeLayout>

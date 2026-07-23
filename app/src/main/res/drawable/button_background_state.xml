@@ -1,0 +1,19 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Disabled State -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" /> <!-- Light gray for disabled state -->
+            <corners android:radius="24dp" /> <!-- Rounded corners -->
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- Optional: White border -->
+        </shape>
+    </item>
+
+    <!-- Enabled State -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#3E2A47" /> <!-- Default button color -->
+            <corners android:radius="24dp" /> <!-- Rounded corners -->
+            <stroke android:width="2dp" android:color="#FFFFFF" /> <!-- Optional: White border -->
+        </shape>
+    </item>
+</selector>

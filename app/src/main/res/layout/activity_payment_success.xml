@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8FAFC">
+
+    <!-- Modern App Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back button"
+            android:clickable="true"
+            android:focusable="true"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ticket Details"
+            android:textColor="#1E293B"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Content Area with ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Ticket Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeColor="#E2E8F0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="16dp">
+
+                    <!-- Ticket Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_tickets"
+                            app:tint="#3B82F6"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENTRY TICKET"
+                            android:textColor="#64748B"
+                            android:textSize="10sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.1"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="14dp"
+                            android:background="#E2E8F0"
+                            android:layout_marginHorizontal="8dp"/>
+
+                        <TextView
+                            android:id="@+id/txtTicketId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#TKT-4892-2023"
+                            android:textColor="#64748B"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/poppins_medium"/>
+                    </LinearLayout>
+
+                    <!-- Attraction Info -->
+                    <TextView
+                        android:id="@+id/txtPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The Grand Taj Mahal"
+                        android:textColor="#1E293B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- QR Code Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#F1F5F9"
+                        android:paddingVertical="22dp"
+                        android:paddingHorizontal="12dp">
+
+                        <TextView
+                            android:id="@+id/qr_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SCAN THIS QR CODE"
+                            android:textColor="#64748B"
+                            android:textSize="10sp"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.1"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/poppins_medium"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <ImageView
+                            android:id="@+id/imgQRCode"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="QR Code"
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintWidth_max="300dp"
+                            app:layout_constraintTop_toBottomOf="@id/qr_label"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Valid for single entry"
+                            android:textColor="#94A3B8"
+                            android:textSize="8sp"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/poppins_regular"
+                            app:layout_constraintTop_toBottomOf="@id/imgQRCode"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Ticket Details Grid -->
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:columnCount="2"
+                        android:rowCount="4"
+                        android:alignmentMode="alignMargins"
+                        android:columnOrderPreserved="false"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="12dp">
+
+                        <!-- Date -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_calendar"
+                                    app:tint="#3B82F6"
+                                    android:layout_marginEnd="6dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12 Nov 2023"
+                                    android:textColor="#1E293B"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Time -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Entry Time"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_clock"
+                                    app:tint="#3B82F6"
+                                    android:layout_marginEnd="6dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="8am to 10pm"
+                                    android:textColor="#1E293B"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Visitors -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Visitors"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="14dp"
+                                        android:src="@drawable/ic_profile"
+                                        app:tint="#3B82F6"
+                                        android:layout_marginEnd="6dp"/>
+
+                                    <TextView
+                                        android:id="@+id/txtVisitors"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0 Visitors"
+                                        android:textColor="#1E293B"
+                                        android:textSize="15sp"
+                                        android:fontFamily="@font/poppins_medium"/>
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/txtVisitorDetails"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text=""
+                                    android:textColor="#64748B"
+                                    android:textSize="10sp"
+                                    android:fontFamily="@font/poppins_regular"
+                                    android:singleLine="false"
+                                    android:maxWidth="120dp"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Camera -->
+                        <LinearLayout
+                            android:id="@+id/cameraContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Camera"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_camera"
+                                    app:tint="#3B82F6"
+                                    android:layout_marginEnd="6dp"/>
+
+                                <TextView
+                                    android:id="@+id/txtCameraCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1 Camera"
+                                    android:textColor="#1E293B"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </GridLayout>
+
+                    <!-- Total Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Total Amount:"
+                            android:textColor="#1E293B"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/poppins_medium"/>
+
+                        <TextView
+                            android:id="@+id/txtTotalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹920"
+                            android:textColor="#10B981"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/poppins_bold"/>
+                    </LinearLayout>
+
+                    <!-- Additional Info -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Instructions:"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <TextView
+                                android:id="@+id/txtInstructions"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Please carry valid ID proof matching the booking details."
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Helpline:"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:layout_marginEnd="8dp"
+                                android:fontFamily="@font/poppins_regular"/>
+
+                            <TextView
+                                android:id="@+id/txtHelpline"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="1800-123-4567 (9AM-6PM)"
+                                android:textColor="#64748B"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/poppins_regular"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,135 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bookmyticket">
+
+    <!-- Camera Permissions & Features -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".core.MyApplication"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bookmyticket"
+        tools:targetApi="31">
+
+        <!-- FileProvider declaration -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.bookmyticket.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="firebase_auth_auto_initialization"
+            android:value="false" />
+        <meta-data
+            android:name="com.google.android.gms.phenotype.PACKAGE_NAME"
+            android:value="com.example.bookmyticket" />
+        <meta-data
+            android:name="firebase_auth_log_level"
+            android:value="DEBUG" />
+        <service
+            android:name=".notification.NotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </service>
+        <!-- Add FirebaseMessagingService -->
+        <service
+            android:name=".notification.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <activity android:name=".auth.LoginActivity"
+            android:theme="@style/BlackTheme"
+            android:exported="true" />
+        <activity android:name=".roles.parkingadmin.ParkingAdminProfileActivity" android:exported="true" />
+        <activity
+            android:name=".features.scanner.QRScannerActivity"
+            android:theme="@style/AppTheme.QRScanner" />
+        <activity
+            android:name=".roles.tourist.TouristNotificationsActivity"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".core.MainActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|screenLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".roles.placeadmin.PlaceBankDetailsActivity" android:exported="true" android:theme="@style/AppTheme" />
+        <activity android:name=".roles.tourist.PaymentSuccessActivity" android:exported="true" />
+        <activity android:name=".features.payment.BankActivity" android:exported="true" />
+        <activity android:name=".roles.placeadmin.ScanQRActivity" android:exported="true" />
+        <activity android:name=".roles.placeadmin.PlaceAdminDashboardActivity" android:exported="true" />
+        <activity android:name=".roles.placeadmin.AdminSlide1" android:exported="true" />
+        <activity android:name=".roles.placeadmin.PlaceAdminNotificationsActivity" android:exported="true" />
+        <activity android:name=".roles.placeadmin.AdminSlide2Activity" android:exported="true" />
+        <activity
+            android:name=".roles.tourist.TouristPageActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/TouristPageTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity android:name=".roles.tourist.DownloadedQRActivity" android:exported="true" />
+        <activity android:name=".features.tickets.TicketHistoryActivity" android:exported="true" />
+        <activity android:name=".roles.parkingadmin.ParkingAdminDashboardActivity" android:exported="true" />
+        <activity android:name=".features.reports.ReportsActivity" android:exported="true" />
+        <activity android:name=".roles.parkingadmin.ManualEntryActivity" android:exported="true" />
+        <activity android:name=".features.settings.SettingsActivity" android:exported="true" />
+        <activity
+            android:name=".roles.parkingadmin.ParkingAdminSetupActivity"
+            android:theme="@style/ParkingAdminSetupTheme"
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity" />
+        <activity android:name=".roles.parkingadmin.ScanVehicleActivity" android:exported="true" />
+        <activity android:name=".roles.placeadmin.PlaceAdminProfileActivity" android:exported="true" />
+        <activity android:name=".roles.tourist.TouristProfileActivity" android:exported="true" />
+        <activity android:name=".roles.tourist.VehicleActivity" android:exported="true" android:theme="@style/VehicleTheme"/>
+        <activity android:name=".roles.tourist.TicketHistoryTouristActivity" android:exported="true"/>
+        <activity android:name=".features.tickets.TicketDetailsActivity" android:exported="true"/>
+        <activity android:name=".roles.placeadmin.ValidationSuccessActivity" android:exported="true"/>
+        <activity android:name=".roles.parkingadmin.ParkingSettingsActivity" />
+        <activity android:name=".roles.parkingadmin.ParkingPriceDetailsActivity" android:exported="true"/>
+        <activity android:name=".roles.tourist.TouristPriceDetailsActivity"
+            android:theme="@style/AppTheme"
+
+            android:exported="true"/>
+
+        <activity
+            android:name=".roles.tourist.FullScreenQRActivity"
+            android:exported="false"/>
+    </application>
+</manifest>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "729175350412",
+    "firebase_url": "https://bookmyticket-a8b92-default-rtdb.firebaseio.com",
+    "project_id": "bookmyticket-a8b92",
+    "storage_bucket": "bookmyticket-a8b92.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729175350412:android:1a397c4834403adf3defa9",
+        "android_client_info": {
+          "package_name": "com.example.bookmyticket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkxLINIpnbrcOm0xlA1orpwYiDjDcJhbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

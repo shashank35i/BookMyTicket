@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M12,2C12.55,2 13,2.45 13,3V5.5C13,6.05 12.55,6.5 12,6.5C11.45,6.5 11,6.05 11,5.5V3C11,2.45 11.45,2 12,2Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M19.07,4.93C19.46,5.32 19.46,5.95 19.07,6.34L17,8.41C16.61,8.8 15.98,8.8 15.59,8.41C15.2,8.02 15.2,7.39 15.59,7L17.66,4.93C18.05,4.54 18.68,4.54 19.07,4.93Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M4.93,4.93C5.32,4.54 5.95,4.54 6.34,4.93L8.41,7C8.8,7.39 8.8,8.02 8.41,8.41C8.02,8.8 7.39,8.8 7,8.41L4.93,6.34C4.54,5.95 4.54,5.32 4.93,4.93Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M20,10H17.5C16.95,10 16.5,10.45 16.5,11C16.5,11.55 16.95,12 17.5,12H20C20.55,12 21,11.55 21,11C21,10.45 20.55,10 20,10Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M6.5,11C6.5,10.45 6.05,10 5.5,10H3C2.45,10 2,10.45 2,11C2,11.55 2.45,12 3,12H5.5C6.05,12 6.5,11.55 6.5,11Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M7.05,15.05C7.44,14.66 8.07,14.66 8.46,15.05L10.53,17.12C10.92,17.51 10.92,18.14 10.53,18.53C10.14,18.92 9.51,18.92 9.12,18.53L7.05,16.46C6.66,16.07 6.66,15.44 7.05,15.05Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M16.95,15.05C17.34,15.44 17.34,16.07 16.95,16.46L14.88,18.53C14.49,18.92 13.86,18.92 13.47,18.53C13.08,18.14 13.08,17.51 13.47,17.12L15.54,15.05C15.93,14.66 16.56,14.66 16.95,15.05Z" />
+    <path
+        android:fillColor="@color/celebration_accent"
+        android:pathData="M12,17.5C12.55,17.5 13,17.95 13,18.5V21C13,21.55 12.55,22 12,22C11.45,22 11,21.55 11,21V18.5C11,17.95 11.45,17.5 12,17.5Z" />
+</vector>

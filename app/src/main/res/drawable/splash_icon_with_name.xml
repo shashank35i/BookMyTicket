@@ -1,0 +1,18 @@
+<!-- res/drawable/splash_icon_with_name.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/transparent" />
+    <!-- App logo -->
+    <item
+        android:drawable="@drawable/initial"
+        android:gravity="center"
+        android:width="120dp"
+        android:height="120dp"
+        android:top="-20dp" />
+    <!-- App name as vector text -->
+    <item
+        android:drawable="@drawable/app_name_text"
+        android:gravity="center"
+        android:width="200dp"
+        android:height="50dp"
+        android:top="100dp" />
+</layer-list>

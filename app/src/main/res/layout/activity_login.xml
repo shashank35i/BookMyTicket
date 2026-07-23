@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:padding="24dp">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_back"
+        android:padding="4dp"
+        android:visibility="gone"/>
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Your Phone Number"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Phone Number Section -->
+    <RelativeLayout
+        android:id="@+id/phoneNumberLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/countryCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingEnd="8dp" />
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter your number"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#A8A8A8"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:background="@android:color/transparent"/>
+
+            <ProgressBar
+                android:id="@+id/phoneProgressBar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:visibility="gone"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                style="?android:attr/progressBarStyleSmall" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sendOtpButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Send OTP"
+            android:backgroundTint="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            app:cornerRadius="10dp"
+            android:layout_marginTop="69dp"/>
+    </RelativeLayout>
+
+    <!-- OTP Section -->
+    <LinearLayout
+        android:id="@+id/otpInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/notThisNumberText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not this number?"
+            android:textSize="16sp"
+            android:textColor="#1E90FF"
+            android:fontFamily="@font/poppins_regular"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:layout_gravity="end"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/otpInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_background"
+                android:hint="Enter OTP"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_regular"
+                app:tint="@color/white"
+                android:textColorHint="@color/white"
+                android:textColor="#FFFFFF"
+                android:inputType="number"
+                android:maxLength="6"
+                android:gravity="center"/>
+
+            <ProgressBar
+                android:id="@+id/otpProgressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:indeterminateTint="#1E90FF"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:30"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_gravity="center"
+            android:paddingTop="12dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/verifyOtpButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Verify OTP"
+            android:backgroundTint="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            app:cornerRadius="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/resendOtpText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend OTP"
+            android:textSize="16sp"
+            android:textColor="#1E90FF"
+            android:fontFamily="@font/poppins_regular"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <!-- Role Selection Section -->
+    <LinearLayout
+        android:id="@+id/roleSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/roleSelectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please select how you'll be using our services:\n• Tourist - Explore and book tickets\n• Admin - Manage venues and bookings"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:lineSpacingExtra="6sp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/touristButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Tourist"
+            android:backgroundTint="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            app:cornerRadius="10dp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/adminButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Admin"
+            android:backgroundTint="#1E90FF"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_medium"
+            app:cornerRadius="10dp"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:id="@+id/adminOptionsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/placeAdminButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Place Admin"
+                android:backgroundTint="#1E90FF"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="16dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/parkingAdminButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Parking Admin"
+                android:backgroundTint="#1E90FF"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_medium"
+                app:cornerRadius="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

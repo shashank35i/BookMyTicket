@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">QuickEntry</string>
+    <string name="scan_qr_code_desc">\n</string>
+    <string name="qr_details">
+    QR ID: %1$s
+    Place: %2$s
+    Amount: ₹%3$s
+    Valid Until: %4$s
+    Helpline: %5$s
+    Instructions: %6$s
+</string>
+    <plurals name="camera_count">
+        <item quantity="one">%d Camera</item>
+        <item quantity="other">%d Cameras</item>
+    </plurals>
+    <string-array name="account_types">
+        <item>Savings</item>
+        <item>Current</item>
+    </string-array>
+
+    <string name="ticket_id_format">Ticket ID: %s</string>
+    <string name="admin_format">Admin: %s</string>
+    <string name="instructions_format">Instructions: %s</string>
+    <string name="helpline_format">Helpline: %s</string>
+    <string name="persons_format">Persons: %d</string>
+    <string name="amount_format">₹%s</string>
+    <string name="delete_icon_description">Delete icon</string>
+    <string name="delete_notification">Delete Notification</string>
+</resources>
