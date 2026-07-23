@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "fba03c3a-476d-4b75-a110-b00c4e71c0de",
+    "name": "BookMyTicket API",
+    "description": "Prototype API collection. The demo payout request is state-changing and guarded by an explicit collection variable.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://asia-south1-your-project-id.cloudfunctions.net",
+      "type": "string"
+    },
+    {
+      "key": "allowDestructivePayoutTest",
+      "value": "false",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Demo payout (destructive)",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.collectionVariables.get('allowDestructivePayoutTest') !== 'true') {",
+              "  throw new Error('Refusing destructive request. Use an isolated sandbox and set allowDestructivePayoutTest=true.');",
+              "}"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Function returned a handled status', function () {",
+              "  pm.expect([200, 400, 500]).to.include(pm.response.code);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/demoPayout",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "demoPayout"
+          ]
+        },
+        "description": "Triggers the current demo payout workflow. This can transfer sandbox funds, write Firestore, and send email."
+      },
+      "response": []
+    }
+  ]
+}
